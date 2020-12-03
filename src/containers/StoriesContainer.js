@@ -16,7 +16,7 @@ export const StoriesContainer = () => {
   //loop over the stories
   return (
     <>
-      <GlobalStyle></GlobalStyle>
+      <GlobalStyle />
       <StoriesContainerWrapper data-test-id="stories-container">
         <h1>Hacker News Stories</h1>
         {storyIds.map((storyId) => (
