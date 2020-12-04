@@ -38,7 +38,7 @@ export const StoryMeta = styled.div`
   }
 
   > span:not(:first-child):before {
-    content: "•";
+    content: "";
     margin: 0 7px;
   }
 
