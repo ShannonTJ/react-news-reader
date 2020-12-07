@@ -40,6 +40,6 @@ test("renders the <ArticlesContainer/> with articles", async () => {
   await waitFor(() => [
     expect(getByText("News Stories")).toBeTruthy(),
     expect(getByText("Something Title")).toBeTruthy(),
-    expect(queryByTestId("article-author").textContent).toEqual("By: Shan"),
+    expect(queryByTestId("article-author").textContent).toEqual("Author: Shan"),
   ]);
 });

@@ -15,7 +15,7 @@ export const Article = memo(function Article({ article }) {
       </ArticleTitle>
       <ArticleMeta>
         <span data-testid="article-author">
-          <ArticleMetaElement color="#000">By:</ArticleMetaElement>
+          <ArticleMetaElement color="#000">Author:</ArticleMetaElement>
           {` `}
           {article.author}
         </span>
