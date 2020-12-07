@@ -27,7 +27,7 @@ ul {
 }
 `;
 
-export const StoriesContainerWrapper = styled.main`
+export const ArticlesContainerWrapper = styled.main`
   max-width: 1140px;
   padding: 20px 15px;
   margin: auto;

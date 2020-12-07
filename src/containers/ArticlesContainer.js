@@ -1,5 +1,4 @@
 import React from "react";
-import { getStoryIds } from "../services/hnApi";
 import { Article } from "../components/Article";
 import {
   GlobalStyle,
@@ -9,12 +8,7 @@ import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 
 export const ArticlesContainer = () => {
   const { count } = useInfiniteScroll();
-  const [storyIds, setStoryIds] = useState([]);
   const test = useInfiniteScroll();
-
-  useEffect(() => {
-    getStoryIds().then((data) => setStoryIds(data));
-  }, []);
 
   //loop over the Articles
   return (
