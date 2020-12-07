@@ -6,12 +6,11 @@ import {
   ArticlesContainerWrapper,
 } from "../styles/ArticlesContainerStyles";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
+import { GET_ALL_ARTICLES } from "../graphql/get-all-articles";
 
 export const ArticlesContainer = () => {
   const { count } = useInfiniteScroll();
-  const test = useInfiniteScroll();
-
-  const { data: { allArticles = [] } = ({} = useQuery(GET_ALL_ARTICLES)) };
+  const { data: { allArticles = [] } = {} } = useQuery(GET_ALL_ARTICLES);
 
   //loop over the Articles
   return (
@@ -19,6 +18,10 @@ export const ArticlesContainer = () => {
       <GlobalStyle />
       <ArticlesContainerWrapper data-test-id="articles-container">
         <h1>News Stories</h1>
+        {allArticles &&
+          allArticles
+            .slice(0, count)
+            .map((article) => <Article key={article.id} article={article} />)}
       </ArticlesContainerWrapper>
     </>
   );
