@@ -43,3 +43,33 @@ test("renders the <ArticlesContainer/> with articles", async () => {
     expect(queryByTestId("article-author").textContent).toEqual("Author: Shan"),
   ]);
 });
+
+test("does not render articles when there are none", async () => {
+  const noArticlesMocks = [
+    {
+      request: {
+        query: GET_ALL_ARTICLES,
+      },
+      result: {
+        data: {
+          ...noArticles,
+        },
+      },
+    },
+  ];
+
+  useInfiniteScroll.mockImplementation(() => ({
+    count: STORY_INCREMENT,
+  }));
+
+  const { queryByText, queryByTestId } = render(
+    <MockedProvider mocks={noArticlesMocks}>
+      <ArticlesContainer />
+    </MockedProvider>
+  );
+  await waitFor(() => [
+    expect(queryByText("News Stories")).toBeTruthy(),
+    expect(queryByText("Something Title")).toBeFalsy(),
+    expect(queryByTestId("article-author")).toBeFalsy(),
+  ]);
+});

@@ -26,7 +26,6 @@
       "!src/index.js",
       "!src/reportWebVitals.js",
       "!src/hooks/*.js",
-      "!src/selectors/*.js",
       "!src/mappers/*.js",
       "!src/utils/*.js",
       "!src/App.js"
