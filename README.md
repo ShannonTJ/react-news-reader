@@ -1,3 +1,3 @@
 # react-news-reader
 
-shan-react-news-reader.netlify.app/
+https://shan-react-news-reader.netlify.app/
