@@ -1,4 +1,5 @@
 import React from "react";
+import { useQuery } from "@apollo/react-hooks";
 import { Article } from "../components/Article";
 import {
   GlobalStyle,
@@ -9,6 +10,8 @@ import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 export const ArticlesContainer = () => {
   const { count } = useInfiniteScroll();
   const test = useInfiniteScroll();
+
+  const { data: { allArticles = [] } = ({} = useQuery(GET_ALL_ARTICLES)) };
 
   //loop over the Articles
   return (
