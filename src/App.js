@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { StoriesContainer } from "./containers/StoriesContainer";
+import React from "react";
+import { ArticlesContainer } from "./containers/ArticlesContainer";
 
-export const App = () => <StoriesContainer></StoriesContainer>;
+export const App = () => <ArticlesContainer></ArticlesContainer>;
